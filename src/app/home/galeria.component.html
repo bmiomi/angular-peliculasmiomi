@@ -1,0 +1,71 @@
+<div class="card">
+	<h5 class="card-header">{{Titulo}}</h5>
+	<div class="card-body">
+
+		<div class="row" *ngIf='galeria'>
+
+			<div class="col-sm-6">
+
+				<div class="row">
+					<div class="col-md-12 div-pic-1 puntero"
+						[ngStyle]="{'background-image': 'url('+( galeria[1]  | domSeguro ) +')'}"
+						[routerLink]="['/info',galeria[1].id]">
+						<p class="pic-titulo">
+							{{galeria[1].original_title}}
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 div-pic-2 puntero"
+						[ngStyle]="{'background-image': 'url('+( galeria[2]  | domSeguro ) +')'}"
+						[routerLink]="['/info',galeria[2].id]"> .
+						<p class="pic-titulo">
+							{{galeria[2].original_title}}
+						</p>
+					</div>
+					<div class="col-md-6 div-pic-2 puntero"
+						[ngStyle]="{'background-image': 'url('+( galeria[3]  | domSeguro ) +')'}"
+						[routerLink]="['/info',galeria[3].id]">
+						<p class="pic-titulo">
+							{{galeria[3].original_title}}
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="col-sm-6">
+
+				<div class="row">
+					<div class="col-sm-12 div-pic-1 puntero" [routerLink]="['/info',galeria[4].id]"
+						[ngStyle]="{'background-image': 'url('+( galeria[4]  | domSeguro ) +')'}">_
+						<p class="pic-titulo">
+							{{galeria[4].original_title}}
+						</p>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/info',galeria[5].id]"
+						[ngStyle]="{'background-image': 'url('+( galeria[5]  | domSeguro ) +')'}">_
+						<p class="pic-titulo">
+							{{galeria[5].original_title}}
+						</p>
+					</div>
+					<div class="col-md-6 div-pic-2 puntero" [routerLink]="['/info',galeria[6].id]"
+						[ngStyle]="{'background-image': 'url('+( galeria[6]  | domSeguro ) +')'}">_
+						<p class="pic-titulo">
+							{{galeria[6].original_title}}
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>

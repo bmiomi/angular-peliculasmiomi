@@ -1,0 +1,46 @@
+<div class="container mt-5">
+	<input
+   #Buscar_ type="text" (keyup)="buscar(Buscar_.value)" class="form-control" placeholder="Buscar"
+  class="form-control"  placeholder="Ingresa la Pelicuala a Buscar">
+ </div>
+
+
+	<div class="container">
+		<div class="card-columns">
+			<div class="card mt-5" *ngFor=" let pelicula of peliculas;">
+				<img [src]=" pelicula | domSeguro "  class="card-img-top" [alt]="pelicula.original_title">
+				<div class="card-body">
+					<h5 class="card-title">{{pelicula.original_title}}</h5>
+					<p class="card-text text-justify">{{ pelicula.overview | slice:0:250 }}..</p>
+					<p class="card-text "><small class="text-muted">{{pelicula.release_date}}</small></p>
+					<div class='card-fooder text-rigth'>
+						<button type="button" class="btn btn-outline-info" (click)="redirecionar(pelicula.id)" >Informacion</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+<div *ngIf="cargando" class="alert alert-info text-center mt-3">
+  <h4 classs="alert-heading">Cargando</h4>
+  <p>
+  <i class="fas fa-sync-alt fa-spin fa-2x"></i>
+  </p>
+    <p class="mb-0">
+      espere
+    </p>
+</div>
+
+<div 
+class="alert alert-warning text-center mt-3">
+  <h4 classs="alert-heading">No hay registro</h4>
+  <p>
+    <i class="fa fa-exclamation  fa-2x"></i>
+  </p>
+    <p class="mb-0">
+      espere
+    </p>
+</div>
+
+
+	</div>

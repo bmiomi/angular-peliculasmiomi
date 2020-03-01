@@ -1,0 +1,28 @@
+<div class="container text-center mt-5" *ngIf="peli">
+	<div class="card mb-3">
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<h4>{{peli.original_title}}</h4>
+				<img [src]=" peli | domSeguro  " class="card-img" alt="...">
+    </div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Sinopsis</h5>
+						<p class="card-text text-justify">{{peli.overview}}</p>
+						<h5 class='text-left'>Frase Celebres:
+							<small class="text-muted ">{{peli.tagline}}</small>
+						</h5>
+						<span class=" ml-2 badge badge-success">Popularidad: {{peli.popularity }}</span>
+						<span class=" ml-2 badge badge-warning">Promedio: {{peli.vote_average}}</span>
+						<br>
+
+						<button 
+            (click)='regresar()'
+            class="btn btn-outline-danger ">Regresar</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
